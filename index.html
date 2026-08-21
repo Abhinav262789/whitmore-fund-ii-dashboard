@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Whitmore Fund II - YE 2025</title>
+<style>
+:root{--navy:#0f2744;--teal:#0f766e;--amber:#b45309;--red:#b91c1c;--bg:#f3f4f6;--card:#fff;--line:#e5e7eb;--muted:#6b7280;}
+*{box-sizing:border-box} body{margin:0;font-family:Calibri,Segoe UI,sans-serif;background:var(--bg);color:#111827;}
+header{background:var(--navy);color:#fff;padding:16px 24px}
+header h1{margin:0;font-size:20px;font-weight:650}
+header p{margin:4px 0 0;opacity:.85;font-size:13px}
+nav{display:flex;gap:6px;flex-wrap:wrap;padding:10px 24px;background:#fff;border-bottom:1px solid var(--line)}
+nav button{border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px}
+nav button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.filters{display:flex;gap:14px;flex-wrap:wrap;padding:12px 24px;align-items:end;background:#fff}
+.filters label{font-size:11px;color:var(--muted);display:block;margin-bottom:4px}
+.filters select{padding:7px 10px;border-radius:8px;border:1px solid var(--line);min-width:190px;background:#fff}
+.page{display:none;padding:10px 24px 28px} .page.on{display:block}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.val{font-size:22px;font-weight:700;margin-top:4px}
+.teal{color:var(--teal)} .amber{color:var(--amber)} .red{color:var(--red)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:13px} th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+th{font-size:11px;color:var(--muted)} .num{text-align:right;font-variant-numeric:tabular-nums}
+.banner{background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:10px 12px;font-size:13px;margin:10px 0}
+.warn{background:#fee2e2;border-color:#fca5a5} .ok{background:#d1fae5;border-color:#6ee7b7}
+.h{font-size:15px;margin:0 0 8px} .muted{color:var(--muted);font-size:12px}
+footer{padding:8px 24px 24px;font-size:11px;color:var(--muted)}
+.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600}
+.over{background:#fee2e2;color:var(--red)} .under{background:#d1fae5;color:#047857} .pend{background:#fef3c7;color:#92400e}
+.hidden{display:none !important}
+</style>
+</head>
+<body>
+<header>
+  <h1>Whitmore Fund II - year-end 2025</h1>
+  <p>Leased-asset programme | recognised vs cash | notices beat the tapes</p>
+</header>
+<nav>
+  <button class="active" data-page="overview">Overview</button>
+  <button data-page="books">Accounting</button>
+  <button data-page="portfolio">Portfolio</button>
+  <button data-page="limits">Risk limits</button>
+  <button data-page="sleeve">IR / sleeve</button>
+</nav>
+<div class="filters">
+  <div><label>Asset class</label>
+    <select id="cls">
+      <option value="all">All</option>
+      <option value="loans">Structured debt</option>
+      <option value="leases">Entertainment / leases</option>
+      <option value="hedges">Hedges</option>
+    </select>
+  </div>
+  <div><label>Period</label>
+    <select id="per">
+      <option value="all">All</option>
+      <option value="q4">Q4 2025</option>
+      <option value="cy">Calendar 2025</option>
+      <option value="q3">Q3 2025 (timing only)</option>
+    </select>
+  </div>
+  <div><label>Name</label>
+    <select id="name">
+      <option value="all">All</option>
+      <option value="timberline">Timberline Music Rights</option>
+      <option value="orion">Orion Studios</option>
+      <option value="emberlight">Emberlight Records</option>
+      <option value="longwood">Longwood Music Trust</option>
+      <option value="lumivue">Lumivue Streaming</option>
+      <option value="haruki">Haruki Anime</option>
+    </select>
+  </div>
+</div>
+
+<section id="overview" class="page on">
+  <div class="banner">Greystone drawn $112.5m and SOFR 4% are a <b>scenario</b>. No Q4 reset is in the pack. Change those yellow cells and bank cost moves.</div>
+  <div class="kpis">
+    <div class="card" data-cls="loans" data-name="orion"><div class="lbl">Orion mezz write-down</div><div class="val teal">-$14.44m</div><div class="muted">42.25 mark - equals CDS payout</div></div>
+    <div class="card" data-cls="loans" data-per="q4" data-name="emberlight"><div class="lbl">Q4 timing gap</div><div class="val amber">$1.71m</div><div class="muted">PIK $781k + two missing cash coupons</div></div>
+    <div class="card" data-cls="hedges" data-per="q3" data-name="orion"><div class="lbl">CDS booked late</div><div class="val amber">$14.44m</div><div class="muted">28 Sep event, cash 8 Jan (102 days)</div></div>
+    <div class="card" data-cls="leases" data-per="cy" data-name="longwood"><div class="lbl">Catalog margin CY2025</div><div class="val teal">50.6%</div><div class="muted">Royalties vs all-in content leases</div></div>
+    <div class="card" data-cls="loans" data-per="q4"><div class="lbl">Before bank cost</div><div class="val teal">$11.13m · 9.60%</div><div class="muted">Loan profit Q4 (ex write-down) on USD capital</div></div>
+    <div class="card" data-cls="loans" data-per="q4"><div class="lbl">After bank cost</div><div class="val">$4.65m · 4.01%</div><div class="muted">Same profit minus scenario bank stack</div></div>
+  </div>
+  <div class="card" style="margin-bottom:12px">
+    <h2 class="h">What the whole sleeve earned</h2>
+    <p class="muted">One total, then the three pieces. Loans are Q4. Catalog is calendar 2025. Hedges are Q4 (options + FX). Orion write-down is kept off this run-rate total.</p>
+    <table>
+      <tr><th>Piece</th><th class="num">USD</th></tr>
+      <tr data-cls="loans" data-per="q4"><td>Loans (ex write-down)</td><td class="num">11,132,686</td></tr>
+      <tr data-cls="leases" data-per="cy" data-name="longwood"><td>Catalog (CY net)</td><td class="num">3,183,591</td></tr>
+      <tr data-cls="hedges" data-per="q4"><td>Hedges (options + FX)</td><td class="num">-2,849,585</td></tr>
+      <tr><td><b>Sleeve before bank</b></td><td class="num"><b>11,466,692</b></td></tr>
+      <tr data-cls="loans" data-per="q4"><td>Bank stack (scenario) + GBP package</td><td class="num">-6,624,568</td></tr>
+      <tr><td><b>Sleeve after bank</b></td><td class="num"><b>4,842,124</b></td></tr>
+    </table>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h2 class="h">Cash is not profit</h2>
+      <table>
+        <tr><th>Item</th><th class="num">Cash</th><th class="num">I recognised</th></tr>
+        <tr data-cls="loans" data-name="emberlight" data-per="q4"><td>Emberlight PIK</td><td class="num">0</td><td class="num">781,250</td></tr>
+        <tr data-cls="loans" data-name="emberlight" data-per="q4"><td>Emberlight monthly coupons</td><td class="num">464,625</td><td class="num">1,393,875</td></tr>
+        <tr data-cls="leases" data-name="longwood" data-per="cy"><td>Longwood true-up</td><td class="num">0 (pay Mar-26)</td><td class="num">537,000</td></tr>
+        <tr data-cls="hedges" data-name="orion" data-per="q3"><td>Orion CDS settlement</td><td class="num">0 in Q4</td><td class="num">14,437,500</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2 class="h">Tape vs what I used</h2>
+      <table>
+        <tr><th>Name</th><th>Tape</th><th>I used</th><th>Why</th></tr>
+        <tr data-cls="loans" data-name="timberline"><td>Timberline</td><td>$35.0m</td><td>$30.5m</td><td>Notice 3</td></tr>
+        <tr data-cls="loans" data-name="orion"><td>Orion mezz leftover</td><td>$25m par</td><td>$10.56m</td><td>Auction 42.25</td></tr>
+        <tr data-cls="loans" data-name="emberlight"><td>Emberlight PIK</td><td>blank coupon</td><td>+$781k, $0 cash</td><td>Notice 2</td></tr>
+        <tr data-cls="leases" data-name="longwood"><td>Longwood true-up</td><td>not in Q4 cash</td><td>-$537k accrued</td><td>Notice 6</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="books" class="page">
+  <div class="banner">Accounting: two columns. I do not close the quarter on cash alone.</div>
+  <div class="kpis">
+    <div class="card" data-cls="loans" data-name="emberlight" data-per="q4"><div class="lbl">PIK booked</div><div class="val teal">+$781,250</div><div class="muted">Cash $0</div></div>
+    <div class="card" data-cls="loans" data-name="emberlight" data-per="q4"><div class="lbl">Missing monthly cash</div><div class="val amber">$929,250</div><div class="muted">Ledger has 1 of 3 months</div></div>
+    <div class="card" data-cls="leases" data-name="longwood" data-per="cy"><div class="lbl">Longwood true-up</div><div class="val">-$537,000</div><div class="muted">Earned 2025, cash Mar 2026</div></div>
+    <div class="card" data-cls="hedges" data-name="orion" data-per="q3"><div class="lbl">CDS booking lag</div><div class="val amber">102 days</div><div class="muted">Not Q4 yield</div></div>
+  </div>
+  <div class="card">
+    <h2 class="h">Sleeve total used in the close</h2>
+    <p class="muted">Same stack as Overview. Loans Q4 + catalog CY + hedges Q4. Write-down kept off the run-rate line.</p>
+    <table>
+      <tr><th>Piece</th><th class="num">USD</th></tr>
+      <tr data-cls="loans" data-per="q4"><td>Loans (ex write-down)</td><td class="num">11,132,686</td></tr>
+      <tr data-cls="leases" data-per="cy"><td>Catalog CY net</td><td class="num">3,183,591</td></tr>
+      <tr data-cls="hedges" data-per="q4"><td>Hedges</td><td class="num">-2,849,585</td></tr>
+      <tr><td><b>Before bank</b></td><td class="num"><b>11,466,692</b></td></tr>
+      <tr><td>After bank (scenario + package)</td><td class="num">4,842,124</td></tr>
+      <tr data-cls="loans" data-name="orion"><td>After bank, including Orion write-down</td><td class="num">-9,595,376</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="portfolio" class="page">
+  <div class="banner">PM screen: recognised vs cash, then a call. Pick a name in the filter to jump here.</div>
+  <div class="kpis">
+    <div class="card" data-cls="hedges" data-name="orion"><div class="lbl">Orion hedge</div><div class="val teal">100%</div><div class="muted">$14.4375m / $14.4375m at 42.25 (before $62.5k premium)</div></div>
+    <div class="card" data-cls="hedges" data-name="haruki"><div class="lbl">JPY coverage</div><div class="val amber">87.7%</div><div class="muted">Forward not resized after reset</div></div>
+    <div class="card" data-cls="hedges"><div class="lbl">GBP forward</div><div class="val red">-80%</div><div class="muted">Buys GBP against a GBP loan</div></div>
+    <div class="card" data-cls="hedges"><div class="lbl">EUR Equinox</div><div class="val red">0%</div><div class="muted">No hedge</div></div>
+  </div>
+  <div class="card" style="margin-bottom:12px">
+    <h2 class="h">Name calls (Q4 unless marked CY)</h2>
+    <p class="muted">Recognised is what I book. Cash is what hit the ledger. The call is what I would do next.</p>
+    <table>
+      <tr><th>Name</th><th class="num">Recognised $</th><th class="num">Cash $</th><th>Call</th><th>Why</th></tr>
+      <tr data-name="lumivue" data-cls="loans" data-per="q4">
+        <td>Lumivue</td>
+        <td class="num">3,322,000</td>
+        <td class="num">3,322,000</td>
+        <td><span class="pill pend">WATCH</span></td>
+        <td>20.8% of NAV. Biggest name. $40m bought protection already nets on the limit test. Agent did not test it.</td>
+      </tr>
+      <tr data-name="orion" data-cls="loans" data-per="q4">
+        <td>Orion (ex write-down)</td>
+        <td class="num">1,194,025</td>
+        <td class="num">coupons only</td>
+        <td><span class="pill over">SIZE DOWN</span></td>
+        <td>Headline 17.0% of NAV. CDS closed - do not net $25m. Write-down -$14.44m is not a run-rate. Standstill 30 days.</td>
+      </tr>
+      <tr data-name="emberlight" data-cls="loans" data-per="q4">
+        <td>Emberlight</td>
+        <td class="num">2,175,125</td>
+        <td class="num">464,625</td>
+        <td><span class="pill pend">WATCH</span></td>
+        <td>Second PIK. $781k is income, not cash. A third can step to 15%. Ledger missing two monthly coupons.</td>
+      </tr>
+      <tr data-name="timberline" data-cls="loans" data-per="q4">
+        <td>Timberline</td>
+        <td class="num">735,750</td>
+        <td class="num">coupon + 4.5m principal</td>
+        <td><span class="pill under">HOLD</span></td>
+        <td>Prepaid. Book is $30.5m. Fee $45k is income. The $4.5m is not yield.</td>
+      </tr>
+      <tr data-name="longwood" data-cls="leases" data-per="cy">
+        <td>Longwood / catalog</td>
+        <td class="num">3,183,591 CY net</td>
+        <td class="num">rent only; true-up 0</td>
+        <td><span class="pill under">HOLD</span></td>
+        <td>50.6% CY margin. True-up -$537k is catalog, not loan NIM. Cash in March.</td>
+      </tr>
+    </table>
+  </div>
+  <div id="namePanel"></div>
+</section>
+
+<section id="limits" class="page">
+  <div class="banner warn">12.5% of NAV $385m = $48.125m. Agent standstill is Orion only, 30 days. Status pending.</div>
+  <div class="card" style="margin-bottom:12px" data-name="orion" data-cls="loans">
+    <h2 class="h">Notice 5 - four Orion totals (I am not picking one)</h2>
+    <table>
+      <tr><th>How mezz / CDS is counted</th><th class="num">Orion $</th><th>vs $48.1m</th></tr>
+      <tr><td>Par + CDS netted</td><td class="num">54.75m</td><td><span class="pill over">OVER</span></td></tr>
+      <tr><td>42.25% + CDS netted</td><td class="num">44.31m</td><td><span class="pill under">UNDER</span></td></tr>
+      <tr><td>47.5% + CDS netted</td><td class="num">45.56m</td><td><span class="pill under">UNDER</span></td></tr>
+      <tr><td>CDS not netted (closed)</td><td class="num">79.75m</td><td><span class="pill over">OVER</span></td></tr>
+    </table>
+    <p class="muted">My headline (CDS closed): $65.31m, 17.0% of NAV. <span class="pill pend">PENDING</span></p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h2 class="h">Names above 12.5% on a full-book test</h2>
+      <table>
+        <tr><th>Name</th><th class="num">% NAV</th><th></th></tr>
+        <tr data-name="lumivue"><td>Lumivue</td><td class="num">20.8%</td><td><span class="pill over">OVER</span></td></tr>
+        <tr data-name="orion"><td>Orion (headline)</td><td class="num">17.0%</td><td><span class="pill over">OVER</span></td></tr>
+        <tr data-name="emberlight"><td>Emberlight</td><td class="num">15.7%</td><td><span class="pill over">OVER</span></td></tr>
+      </table>
+      <p class="muted">Protection sold 7.8% of NAV vs 25% cap - inside that limit.</p>
+    </div>
+    <div class="card">
+      <h2 class="h">Counterparties (file 15) - I collapsed duplicate names</h2>
+      <table>
+        <tr><th>Group</th><th>What I did</th></tr>
+        <tr><td>Aldgate / ANBS / Copperfield</td><td>Same house after rebrand. Count once. ~$41m operating cash sits here and was blank on the tape.</td></tr>
+        <tr><td>Greystone Trust Bank vs Greystone Media</td><td>Bank = revolver + IRS. Media = catalog lease. Different groups despite the name.</td></tr>
+        <tr><td>Ashford Ridge NY + London</td><td>One legal entity. HTB row is a duplicate IRS name.</td></tr>
+        <tr><td>Crestwood Capital = Crestwood FX desk</td><td>One FX book (GBP/EUR/JPY).</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="card" data-name="emberlight" style="margin-top:12px">
+    <h2 class="h">Not a formula</h2>
+    <p><b>Emberlight:</b> second PIK. A third can step the rate to 15%. I still book $781k.</p>
+    <p data-name="haruki"><b>Haruki:</b> about $2.15m unhedged after the November reset.</p>
+  </div>
+</section>
+
+<section id="sleeve" class="page">
+  <div class="banner ok">IR: tell LPs the result after bank cost. A swap does not make interest $0.</div>
+  <div class="kpis">
+    <div class="card" data-cls="loans" data-per="q4"><div class="lbl">BEFORE bank cost (loan profit)</div><div class="val teal">$11.13m</div><div class="muted">Q4 coupons/PIK/fees, not the Orion write-down · 9.60% p.a. on USD capital</div></div>
+    <div class="card" data-cls="loans" data-per="q4"><div class="lbl">AFTER bank cost</div><div class="val">$4.65m</div><div class="muted">Same profit minus scenario revolver + Ironbridge + IRS · 4.01% p.a.</div></div>
+    <div class="card" data-cls="leases" data-per="cy" data-name="longwood"><div class="lbl">Catalog CY2025</div><div class="val teal">50.6% margin</div><div class="muted">$6.275m royalties vs ~$3.09m lease</div></div>
+    <div class="card" data-cls="loans" data-per="q4"><div class="lbl">Cost efficiency</div><div class="val">58%</div><div class="muted">Bank stack / loan profit before leverage. Swap does not make this 0.</div></div>
+  </div>
+  <div class="card" data-cls="loans" data-per="q4" style="margin-bottom:12px">
+    <h2 class="h">File 01 asked for this: yield before vs after fund leverage</h2>
+    <p class="muted">Loan profit is the asset result. Capital is USD: Thornbury at 1.2585, Equinox at 1.0740. After leverage I subtract what the fund pays the banks. Drawn $112.5m and SOFR 4% are a scenario. A swap does not make the two numbers equal.</p>
+    <table>
+      <tr><th></th><th class="num">Q4 $</th><th class="num">Yield p.a.</th></tr>
+      <tr><td>Before fund borrowing (ex write-down)</td><td class="num">11,132,686</td><td class="num">9.60%</td></tr>
+      <tr><td>Bank stack (Greystone scenario + Ironbridge + IRS net)</td><td class="num">-6,478,968</td><td class="num"></td></tr>
+      <tr><td><b>After fund borrowing (ex write-down)</b></td><td class="num"><b>4,653,718</b></td><td class="num"><b>4.01%</b></td></tr>
+      <tr><td>Before, including Orion write-down</td><td class="num">-3,304,814</td><td class="num"></td></tr>
+      <tr><td>After, including Orion write-down</td><td class="num">-9,783,782</td><td class="num"></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h2 class="h">Fund borrowing in Q4 (scenario: $112.5m drawn, SOFR 4%)</h2>
+    <p class="muted">Drawn and SOFR are assumed - no Q4 reset in the pack. Ironbridge 8.25% is in the contract.</p>
+    <table>
+      <tr><th>Item</th><th class="num">Q4 $</th></tr>
+      <tr><td>Revolver interest</td><td class="num">-1,973,538</td></tr>
+      <tr><td>Unused fee</td><td class="num">-187,500</td></tr>
+      <tr><td>Ironbridge (one quarter)</td><td class="num">-4,125,000</td></tr>
+      <tr><td>Upfront amort + agent</td><td class="num">-150,000</td></tr>
+      <tr><td>IRS net (assumed SOFR)</td><td class="num">-42,930</td></tr>
+    </table>
+  </div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="card">
+      <h2 class="h">Also in Q4 (file 01 asked me to look)</h2>
+      <table>
+        <tr><th>Item</th><th class="num">USD</th><th>Treatment</th></tr>
+        <tr><td>GBP package (65 pips off mid)</td><td class="num">145,600</td><td>Financing in the FX roll, not hedge performance. Confirm buys GBP vs a GBP loan - wrong way.</td></tr>
+        <tr><td>Listed options closed in Q4</td><td class="num">+10,500</td><td>LMVU put closed -17.5k; ORNX call expired +66k; EMBL put expired -38k.</td></tr>
+        <tr><td>FRGF OTC put</td><td class="num">open</td><td>Mark is in GBp; tape printed USD. SLRA is Level 3. I do not force them into yield.</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2 class="h">LP capital (file 13 - file 01 said 78% called, that is stale)</h2>
+      <table>
+        <tr><th>Item</th><th class="num"></th></tr>
+        <tr><td>Commitments</td><td class="num">500m</td></tr>
+        <tr><td>Net called</td><td class="num">421.8m (84.36%)</td></tr>
+        <tr><td>Over-call refund Nov-25</td><td class="num">3.2m</td></tr>
+        <tr><td>Cayman GBP call FX plug</td><td class="num">~204k</td></tr>
+        <tr><td>Preferred return 7%</td><td class="num">Not fully paid. No carry yet.</td></tr>
+      </table>
+      <p class="muted">Ops booked the GBP election at 25-Apr spot 1.2870 vs the 1.24 notice rate. I leave the 204k in a recon account. I do not put it in loan yield.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Open this file in Chrome or Edge. Same numbers as the workbook (42.25 Orion, Notice 3 Timberline, Notice 2 PIK, Notice 6 true-up).</footer>
+
+<script>
+const notes = {
+  timberline: '<div class="banner"><b>Timberline.</b> Tape still $35m. Notice 3: prepaid $4.5m on 5 Oct. I use <b>$30.5m</b>. Coupon 4 days at 35m + 86 days at 30.5m = $690,750 vs taped $787,500. Fee +$45,000. The $4.5m is principal, not yield.</div>',
+  orion: '<div class="banner"><b>Orion.</b> Senior $45m stays; coupon SOFR+525. One mezz line at <b>$10,562,500 (42.25)</b> so the write-down equals CDS $14,437,500. Hedge 100%. RCF $9.75m kept. Missed mezz coupon reversed (not PIK). CDS buyer; cash 8 Jan.</div>',
+  emberlight: '<div class="banner"><b>Emberlight.</b> PIK $781,250 income, $0 cash. Second PIK - a third can go to 15%. Cash file may be missing two monthly coupons ($929,250).</div>',
+  longwood: '<div class="banner"><b>Longwood.</b> Rent -$450k a quarter. True-up -$537k accrued at year-end, paid March. I match it to royalties, not loan yield. Year margin 50.6%.</div>',
+  lumivue: '<div class="banner"><b>Lumivue.</b> 20.8% of NAV after $40m bought protection. Largest name. Agent certificate did not test it.</div>',
+  haruki: '<div class="banner"><b>Haruki.</b> Loan reset to JPY 2.7378bn. Forward still JPY 2.4bn. Coverage 87.7% (~$2.15m short). Direction of this forward is right.</div>'
+};
+function applyFilter(){
+  const cls = document.getElementById('cls').value;
+  const per = document.getElementById('per').value;
+  const name = document.getElementById('name').value;
+  document.querySelectorAll('[data-cls],[data-per],[data-name]').forEach(el => {
+    const okCls = cls==='all' || !el.dataset.cls || el.dataset.cls===cls;
+    const okPer = per==='all' || !el.dataset.per || el.dataset.per===per;
+    const okName = name==='all' || !el.dataset.name || el.dataset.name===name;
+    el.classList.toggle('hidden', !(okCls && okPer && okName));
+  });
+  const panel = document.getElementById('namePanel');
+  panel.innerHTML = notes[name] || '<p class="muted">Pick a name to see the break I adjusted.</p>';
+}
+document.getElementById('cls').onchange = applyFilter;
+document.getElementById('per').onchange = applyFilter;
+document.getElementById('name').onchange = () => {
+  applyFilter();
+  if(document.getElementById('name').value !== 'all'){
+    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+    document.querySelector('[data-page=portfolio]').classList.add('active');
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+    document.getElementById('portfolio').classList.add('on');
+  }
+};
+document.querySelectorAll('nav button').forEach(btn=>{
+  btn.onclick = () => {
+    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+    document.getElementById(btn.dataset.page).classList.add('on');
+  };
+});
+applyFilter();
+</script>
+</body>
+</html>
