@@ -33,6 +33,19 @@ footer{padding:8px 24px 24px;font-size:11px;color:var(--muted)}
 .pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600}
 .over{background:#fee2e2;color:var(--red)} .under{background:#d1fae5;color:#047857} .pend{background:#fef3c7;color:#92400e}
 .hidden{display:none !important}
+.legend{font-size:12px;color:var(--muted);margin:0 0 10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 6px 0 12px;vertical-align:middle}
+.legend i:first-child{margin-left:0}
+.chart{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.chart-item{flex:1;min-width:110px;text-align:center}
+.bars{display:flex;gap:8px;justify-content:center;align-items:flex-end;height:140px}
+.bar{width:28px;border-radius:4px 4px 0 0;min-height:4px}
+.bar.cash{background:#9ca3af}
+.bar.rec{background:var(--teal)}
+.bar.before{background:var(--teal);width:48px}
+.bar.after{background:var(--navy);width:48px}
+.chart-lab{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.35}
+.chart-val{font-size:12px;font-weight:650;margin-top:2px}
 </style>
 </head>
 <body>
@@ -131,6 +144,45 @@ footer{padding:8px 24px 24px;font-size:11px;color:var(--muted)}
     <div class="card" data-cls="loans" data-name="emberlight" data-per="q4"><div class="lbl">Missing monthly cash</div><div class="val amber">$929,250</div><div class="muted">Ledger has 1 of 3 months</div></div>
     <div class="card" data-cls="leases" data-name="longwood" data-per="cy"><div class="lbl">Longwood true-up</div><div class="val">-$537,000</div><div class="muted">Earned 2025, cash Mar 2026</div></div>
     <div class="card" data-cls="hedges" data-name="orion" data-per="q3"><div class="lbl">CDS booking lag</div><div class="val amber">102 days</div><div class="muted">Not Q4 yield</div></div>
+  </div>
+  <div class="card" style="margin-bottom:12px">
+    <h2 class="h">Cash vs what I recognised</h2>
+    <p class="muted">Each pair is scaled to that line, so a $14m CDS does not hide a $781k PIK. Grey is cash. Teal is the close.</p>
+    <p class="legend"><i class="cash" style="background:#9ca3af"></i>Cash <i class="rec" style="background:#0f766e"></i>Recognised</p>
+    <div class="chart">
+      <div class="chart-item" data-cls="loans" data-name="emberlight" data-per="q4">
+        <div class="bars">
+          <div class="bar cash" style="height:4px" title="Cash $0"></div>
+          <div class="bar rec" style="height:140px" title="Recognised $781,250"></div>
+        </div>
+        <div class="chart-lab">Emberlight PIK</div>
+        <div class="chart-val">$0 vs $781k</div>
+      </div>
+      <div class="chart-item" data-cls="loans" data-name="emberlight" data-per="q4">
+        <div class="bars">
+          <div class="bar cash" style="height:47px" title="Cash $464,625"></div>
+          <div class="bar rec" style="height:140px" title="Recognised $1,393,875"></div>
+        </div>
+        <div class="chart-lab">Emberlight coupons</div>
+        <div class="chart-val">$465k vs $1.39m</div>
+      </div>
+      <div class="chart-item" data-cls="leases" data-name="longwood" data-per="cy">
+        <div class="bars">
+          <div class="bar cash" style="height:4px" title="Cash $0 (pay Mar-26)"></div>
+          <div class="bar rec" style="height:140px" title="Recognised $537,000"></div>
+        </div>
+        <div class="chart-lab">Longwood true-up</div>
+        <div class="chart-val">$0 vs $537k</div>
+      </div>
+      <div class="chart-item" data-cls="hedges" data-name="orion" data-per="q3">
+        <div class="bars">
+          <div class="bar cash" style="height:4px" title="Cash $0 in Q4"></div>
+          <div class="bar rec" style="height:140px" title="Recognised $14,437,500"></div>
+        </div>
+        <div class="chart-lab">Orion CDS (not Q4 yield)</div>
+        <div class="chart-val">$0 vs $14.44m</div>
+      </div>
+    </div>
   </div>
   <div class="card">
     <h2 class="h">Sleeve total used in the close</h2>
@@ -249,6 +301,27 @@ footer{padding:8px 24px 24px;font-size:11px;color:var(--muted)}
     <div class="card" data-cls="loans" data-per="q4"><div class="lbl">AFTER bank cost</div><div class="val">$4.65m</div><div class="muted">Same profit minus scenario revolver + Ironbridge + IRS · 4.01% p.a.</div></div>
     <div class="card" data-cls="leases" data-per="cy" data-name="longwood"><div class="lbl">Catalog CY2025</div><div class="val teal">50.6% margin</div><div class="muted">$6.275m royalties vs ~$3.09m lease</div></div>
     <div class="card" data-cls="loans" data-per="q4"><div class="lbl">Cost efficiency</div><div class="val">58%</div><div class="muted">Bank stack / loan profit before leverage. Swap does not make this 0.</div></div>
+  </div>
+  <div class="card" data-cls="loans" data-per="q4" style="margin-bottom:12px">
+    <h2 class="h">Before vs after bank cost</h2>
+    <p class="muted">Same Q4 loan profit. The drop is the scenario bank stack, not a swap that zeros interest.</p>
+    <p class="legend"><i style="background:#0f766e"></i>Before bank <i style="background:#0f2744"></i>After bank</p>
+    <div class="chart" style="max-width:420px">
+      <div class="chart-item">
+        <div class="bars">
+          <div class="bar before" style="height:140px" title="$11,132,686"></div>
+        </div>
+        <div class="chart-lab">Before</div>
+        <div class="chart-val">$11.13m · 9.60%</div>
+      </div>
+      <div class="chart-item">
+        <div class="bars">
+          <div class="bar after" style="height:59px" title="$4,653,718"></div>
+        </div>
+        <div class="chart-lab">After</div>
+        <div class="chart-val">$4.65m · 4.01%</div>
+      </div>
+    </div>
   </div>
   <div class="card" data-cls="loans" data-per="q4" style="margin-bottom:12px">
     <h2 class="h">File 01 asked for this: yield before vs after fund leverage</h2>
